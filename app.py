@@ -18,12 +18,12 @@ if "chat_messages" not in st.session_state:
 if "detail_item" not in st.session_state:
     st.session_state.detail_item = None
 
-# Set page config to control sidebar
+# Set page config
 st.set_page_config(
     page_title="InsuranceAI",
     page_icon="🛡️",
     layout="wide",
-    initial_sidebar_state="expanded"  # Keeps sidebar open but no native duplicates since no 'pages/' folder
+    initial_sidebar_state="expanded"
 )
 
 # Sidebar navigation
@@ -33,6 +33,7 @@ nav_items = [
     ("🏠 Home", "home"),
     ("◈ Creator Studio", "studio"),
     ("◉ AI Expert Chat", "chat"),
+    ("🤖 Agent Studio", "agent_studio"),  
     ("⊟ History", "history"),
     ("▦ Gallery", "gallery"),
 ]
