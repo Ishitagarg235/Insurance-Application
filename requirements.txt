@@ -1,0 +1,5 @@
+streamlit
+groq
+huggingface-hub
+python-dotenv
+Pillow
