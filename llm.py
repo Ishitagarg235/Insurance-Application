@@ -1,23 +1,11 @@
-import os
-from pathlib import Path
-
-from dotenv import load_dotenv
 from groq import Groq
+import streamlit as st
 
 
-load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
-
+#load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
 
 def _get_api_key() -> str:
-    for env_name in ("GROQ_API_KEY", "GROQ_KEY"):
-        api_key = os.getenv(env_name, "").strip()
-        if api_key:
-            return api_key
-
-    raise RuntimeError(
-        "Missing Groq API key. Add GROQ_API_KEY to your .env file."
-    )
-
+    return st.secrets["GROQ_API_KEY"]
 
 def _get_client() -> Groq:
     return Groq(api_key=_get_api_key())

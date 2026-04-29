@@ -1,12 +1,10 @@
 from huggingface_hub import InferenceClient
 from PIL import Image
 import io
-# import streamlit as st
+import streamlit as st
 # Your working token
 
-HF_TOKEN = "hf token"
-
-client = InferenceClient(token=HF_TOKEN)
+client = InferenceClient(token=st.secrets["HF_TOKEN"])
 
 def generate_image(prompt: str) -> Image.Image | None:
     """
