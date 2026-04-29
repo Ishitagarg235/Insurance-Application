@@ -15,13 +15,12 @@ def get_llm():
         raise RuntimeError("Missing GROQ_API_KEY")
 
     return LLM(
-        model="groq/llama-3.3-70b-versatile",
+        model="llama-3.3-70b-versatile",   # ← FIXED: no "groq/" prefix
         api_key=api_key,
         temperature=0.3,
         max_tokens=2048,
-        base_url="https://api.groq.com/openai/v1",   # ← This was missing
+        base_url="https://api.groq.com/openai/v1",
     )
-
 
 # ── Researcher Agent ──────────────────────────────────────────────────────────
 
