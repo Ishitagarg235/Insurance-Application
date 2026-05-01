@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: insurance-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: insurance-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: insurance-app
+    spec:
+      containers:
+      - name: insurance-app
+        image: ishitagarg235/insurance-app:v1
+        ports:
+        - containerPort: 8501
