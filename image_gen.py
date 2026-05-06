@@ -23,7 +23,7 @@ def generate_image(prompt: str) -> Image.Image | None:
             negative_prompt="blurry, low quality, bad anatomy, watermark, text, deformed, ugly, extra limbs",
             width=768,
             height=512,
-            num_inference_steps=28,
+            num_inference_steps=12,
             guidance_scale=7.0,
         )
 
